@@ -1,32 +1,88 @@
+import json
 import base64
+from pathlib import Path
 from io import BytesIO
-from typing import List
+from typing import Any
 
 from PIL import Image, ImageDraw, ImageFont
 from sqlalchemy.orm import Session
 
-from . import models, schemas
+from . import config, models, schemas
 
 
-def render_image(image_data: bytes,
-                 text_areas: List[schemas.TextArea]):
-    # Загружаем изображение в Pillow
-    with Image.open(BytesIO(image_data)) as img:
-        draw = ImageDraw.Draw(img)
+def render_image(image: bytes, params: schemas.InsertTextParams):  # noqa: C901
+    # Открываем изображение и создаем объект ImageDraw
+    image = Image.open(BytesIO(image))
+    draw = ImageDraw.Draw(image)
 
-        # Добавляем текстовые поля
-        for area in text_areas:
-            font = ImageFont.truetype(area.font, size=area.font_size)
-            draw.text(
-                (area.x, area.y), area.text,
-                fill=area.color, font=font
-            )
+    for _, field_data in params.fields.items():
+        # Вычисляем размер поля и шрифт для текста
+        text = field_data.text
+        coordinates = field_data.coordinates
+        font = field_data.font
 
-        # Конвертируем изображение обратно в бинарный формат и возвращаем
-        img_bytes = BytesIO()
-        img.save(img_bytes, format=img.format)
+        font_path = font.path
+        font_color = font.color
+        font_optimal_size = font.optimal_size
+        font_min_size = font.min_size
 
-        return img_bytes.getvalue(), img.format
+        # Получаем координаты для текста
+        x0, y0 = coordinates[0]  # верхний левый угол
+        x1, y1 = coordinates[2]  # нижний правый угол
+        field_width = x1 - x0
+        field_height = y1 - y0
+
+        # Уменьшаем шрифт и переносим текст на новую строку при необходимости
+        font_size = font_optimal_size
+        font = ImageFont.truetype(font_path, font_size)
+        while True:
+            text_width, text_height = draw.textsize(text, font)
+            if text_width <= field_width and text_height <= field_height:
+                break
+            font_size -= 1
+            if font_size < font_min_size:
+                font_size = font_min_size
+                break
+            font = ImageFont.truetype(font_path, font_size)
+
+        # Разбиваем текст на несколько подстрок, если необходимо
+        lines = []
+        line = ''
+        for word in text.split():
+            test_line = line + word + ' '
+            test_line_width, _ = draw.textsize(test_line, font)
+            if test_line_width > field_width:
+                lines.append(line.strip())
+                line = word + ' '
+            else:
+                line = test_line
+        if line:
+            lines.append(line.strip())
+
+        # Вычисляем позицию текста в каждой строке
+        text_y = y0 + (field_height - len(lines) * text_height) // 2
+        for line in lines:
+            text_width, _ = draw.textsize(line, font)
+            text_x = x0 + (field_width - text_width) // 2
+            draw.text((text_x, text_y), line, font=font, fill=font_color)
+            text_y += text_height
+
+    # Конвертируем изображение обратно в бинарный формат и возвращаем
+    img_bytes = BytesIO()
+    image.save(img_bytes, format=image.format)
+
+    return img_bytes.getvalue(), image.format
+
+
+def create_an_image_buffer(rendered_image: models.RenderedImage):
+    # Вытягиваем формат изображения
+    with Image.open(BytesIO(rendered_image.image)) as img:
+        image_format = img.format.lower()
+
+    # Создаем байтовый поток и сохраняем изображение в него
+    image_stream = BytesIO(rendered_image.image)
+
+    return image_stream, image_format
 
 
 def generate_filename(original: models.OriginalImage, db: Session) -> str:
@@ -60,3 +116,14 @@ def binary_to_base64(rendered_image_data: bytes, format: str) -> str:
     encoded_image = f'data:image/{format.lower()};base64,{data}'
 
     return encoded_image
+
+
+def read_file(file_path: Path, mode: str = 'r',
+              encoding: str = 'utf-8') -> Any:
+    with open(file_path, mode, encoding) as content:
+        return content.read()
+
+
+def get_abi_data(abi_filepath: Path =
+                 config.BASE_DIR.joinpath('abi.json')) -> Any:
+    return json.loads(read_file(abi_filepath))

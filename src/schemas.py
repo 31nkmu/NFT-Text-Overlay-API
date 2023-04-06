@@ -1,4 +1,4 @@
-from pydantic import BaseModel, Field
+from pydantic import BaseModel
 from typing import List
 
 
@@ -11,15 +11,23 @@ class UserOut(BaseModel):
     username: str
 
 
-class TextArea(BaseModel):
-    x: int = Field(ge=0)
-    y: int = Field(ge=0)
-    text: str
-    font: str
-    font_size: int = Field(ge=0)
+class Font(BaseModel):
+    path: str
     color: str
+    optimal_size: int
+    min_size: int
 
 
-class TemplateData(BaseModel):
-    template: int = Field(ge=0)
-    text_areas: List[TextArea]
+class Fields(BaseModel):
+    text: str
+    coordinates: List[List[int]]
+    font: Font
+
+
+class InsertTextParams(BaseModel):
+    template_id: int
+    fields: dict[str, Fields]
+
+
+class Table(BaseModel):
+    body: List[InsertTextParams]
