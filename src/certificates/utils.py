@@ -7,7 +7,8 @@ from typing import Any
 from PIL import Image, ImageDraw, ImageFont
 from sqlalchemy.orm import Session
 
-from . import config, models, schemas
+from src import config
+from . import models, schemas
 
 
 def render_image(image: bytes, params: schemas.InsertTextParams):  # noqa: C901

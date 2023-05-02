@@ -1,8 +1,8 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-from .models import Base
-from .config import db_engine_settings  # ToDo: env
+from models import Base
+from ..config import db_engine_settings  # ToDo: env
 
 # создаем подключение к базе данных
 engine = create_engine(db_engine_settings, echo=True)
