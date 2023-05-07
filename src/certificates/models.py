@@ -31,7 +31,7 @@ class Certificate(Base):
     __tablename__ = 'certificates'
 
     id = Column(Integer, primary_key=True, autoincrement=True)
-    name = Column(String, nullable=False)
+    filename = Column(String, nullable=False)
     image = Column(LargeBinary, nullable=False)
     created_on = Column(DateTime, default=datetime.utcnow)
     updated_on = Column(DateTime, default=datetime.utcnow,
@@ -49,26 +49,32 @@ class TemplateImage(Base):
     __abstract__ = True
 
     id = Column(Integer, primary_key=True)
-    name = Column(String, nullable=False)
+    filename = Column(String, nullable=False)
+    image = Column(LargeBinary, nullable=False)
     created_on = Column(DateTime, default=datetime.utcnow)
     updated_on = Column(DateTime, default=datetime.utcnow,
                         onupdate=datetime.utcnow)
-    owner_id = Column(Integer, ForeignKey('users.id'))
 
 
 class PublicTemplate(TemplateImage):
     __tablename__ = 'public_templates'
 
+    owner_id = Column(Integer, ForeignKey('users.id'))
+
+    # Связь с таблицей пользователей
+    owner = relationship("User", back_populates="public_templates")
+
     def __repr__(self) -> str:
-        return f'Public template {self.id}: {self.name}'
+        return f'Public template {self.id}: {self.filename}'
 
 
 class PrivateTemplate(TemplateImage):
     __tablename__ = 'private_templates'
+
     owner_id = Column(Integer, ForeignKey('users.id'))
 
     # Связь с таблицей пользователей
-    owner = relationship("User", back_populates="templates")
+    owner = relationship("User", back_populates="private_templates")
 
     def __repr__(self) -> str:
-        return f'Private Template {self.id}: {self.name}'
+        return f'Private Template {self.id}: {self.filename}'

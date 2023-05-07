@@ -9,7 +9,7 @@ from sqlalchemy.orm import Session
 
 from src import config
 from . import models, schemas
-from ..auth.database import User
+from ..auth.models import User
 
 
 def render_image(image: bytes, params: schemas.InsertTextParams):  # noqa: C901
@@ -87,9 +87,9 @@ def create_an_image_buffer(rendered_image: models.Certificate):
     return image_stream, image_format
 
 
-def generate_filename(original: models.OriginalImage, db: Session) -> str:
+def generate_filename(original: models.PublicTemplate, db: Session) -> str:
     # Получаем оригинальное изображение из базы данных
-    original = db.query(models.OriginalImage).get(original.id)
+    original = db.query(models.PublicTemplate).get(original.id)
     if not original:
         raise ValueError(f"No original image found with id {original.id}")
     # Получаем владельца оригинального изображения из базы данных
