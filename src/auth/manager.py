@@ -5,9 +5,10 @@ from fastapi_users import BaseUserManager, FastAPIUsers, \
     IntegerIDMixin, InvalidPasswordException
 from fastapi_users.authentication import \
     AuthenticationBackend, CookieTransport, JWTStrategy
-from fastapi_users.db import SQLAlchemyUserDatabase
+from fastapi_users_db_sqlalchemy import SQLAlchemyUserDatabase
 
-from .database import User, get_user_db
+from .utils import get_user_db
+from .models import User
 from .schemas import UserCreate
 from .mail import send_email
 
