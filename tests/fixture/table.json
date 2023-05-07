@@ -5,42 +5,42 @@
             "fields": {
                 "title": {
                     "text": "Сертификат",
-                    "coordinates": [[660, 1045], [1780, 1045], [1780, 1435], [660, 1435]],
+                    "coordinates": [[690, 1188], [1765, 1301]],
                     "font": {
-                        "path": "static/fonts/montserrat/Montserrat-Black.ttf",
+                        "path": "static/fonts/montserrat/Montserrat-Medium.ttf",
                         "color": "white",
                         "optimal_size": 150,
-                        "min_size": 40
+                        "min_size": 100
                     }
                 },
                 "name": {
                     "text": "Петр Иванов",
-                    "coordinates": [[620, 1430], [1820, 1430], [1820, 1715], [620, 1715]],
+                    "coordinates": [[705, 1537], [1770, 1602]],
                     "font": {
-                        "path": "static/fonts/montserrat/Montserrat-Regular.ttf",
+                        "path": "static/fonts/montserrat/Montserrat-Medium.ttf",
                         "color": "white",
-                        "optimal_size": 130,
-                        "min_size": 90
+                        "optimal_size": 70,
+                        "min_size": 50
                     }
                 },
                 "course": {
                     "text": "Frontend-разработчик",
-                    "coordinates": [[620, 1730], [1820, 1730], [1820, 2080], [620, 2080]],
+                    "coordinates": [[694, 1835], [1746, 1969]],
                     "font": {
-                        "path": "static/fonts/montserrat/Montserrat-Regular.ttf",
+                        "path": "static/fonts/montserrat/Montserrat-Medium.ttf",
                         "color": "white",
-                        "optimal_size": 100,
-                        "min_size": 70
+                        "optimal_size": 60,
+                        "min_size": 40
                     }
                 },
                 "year": {
                     "text": "2021",
-                    "coordinates": [[620, 2100], [1820, 2100], [1820, 2830], [620, 2830]],
+                    "coordinates": [[618, 2267], [1818, 2594]],
                     "font": {
-                        "path": "static/fonts/montserrat/Montserrat-Bold.ttf",
+                        "path": "static/fonts/montserrat/Montserrat-Medium.ttf",
                         "color": "white",
-                        "optimal_size": 300,
-                        "min_size": 250
+                        "optimal_size": 454,
+                        "min_size": 400
                     }
                 }
             }
@@ -50,42 +50,42 @@
             "fields": {
                 "title": {
                     "text": "Сертификат",
-                    "coordinates": [[660, 1045], [1780, 1045], [1780, 1435], [660, 1435]],
+                    "coordinates": [[690, 1188], [1765, 1301]],
                     "font": {
-                        "path": "static/fonts/montserrat/Montserrat-Black.ttf",
-                        "color": "white",
+                        "path": "static/fonts/montserrat/Montserrat-Medium.ttf",
+                        "color": "black",
                         "optimal_size": 150,
-                        "min_size": 60
+                        "min_size": 100
                     }
                 },
                 "name": {
-                    "text": "Иван Васильев",
-                    "coordinates": [[620, 1430], [1820, 1430], [1820, 1715], [620, 1715]],
+                    "text": "Петр Иванов",
+                    "coordinates": [[705, 1537], [1770, 1602]],
                     "font": {
-                        "path": "static/fonts/montserrat/Montserrat-Regular.ttf",
-                        "color": "white",
-                        "optimal_size": 130,
-                        "min_size": 90
+                        "path": "static/fonts/montserrat/Montserrat-Medium.ttf",
+                        "color": "black",
+                        "optimal_size": 70,
+                        "min_size": 50
                     }
                 },
                 "course": {
-                    "text": "Backend-разработчик",
-                    "coordinates": [[620, 1730], [1820, 1730], [1820, 2080], [620, 2080]],
+                    "text": "Frontend-разработчик",
+                    "coordinates": [[694, 1835], [1746, 1969]],
                     "font": {
-                        "path": "static/fonts/montserrat/Montserrat-Regular.ttf",
-                        "color": "white",
-                        "optimal_size": 100,
-                        "min_size": 70
+                        "path": "static/fonts/montserrat/Montserrat-Medium.ttf",
+                        "color": "black",
+                        "optimal_size": 60,
+                        "min_size": 40
                     }
                 },
                 "year": {
-                    "text": "2022",
-                    "coordinates": [[620, 2100], [1820, 2100], [1820, 2830], [620, 2830]],
+                    "text": "2021",
+                    "coordinates": [[618, 2267], [1818, 2594]],
                     "font": {
-                        "path": "static/fonts/montserrat/Montserrat-Bold.ttf",
-                        "color": "white",
-                        "optimal_size": 300,
-                        "min_size": 250
+                        "path": "static/fonts/montserrat/Montserrat-Medium.ttf",
+                        "color": "black",
+                        "optimal_size": 454,
+                        "min_size": 400
                     }
                 }
             }
@@ -95,42 +95,267 @@
             "fields": {
                 "title": {
                     "text": "Сертификат",
-                    "coordinates": [[660, 1045], [1780, 1045], [1780, 1435], [660, 1435]],
+                    "coordinates": [[137, 327], [1789, 497]],
                     "font": {
-                        "path": "static/fonts/montserrat/Montserrat-Black.ttf",
-                        "color": "white",
-                        "optimal_size": 150,
-                        "min_size": 60
+                        "path": "static/fonts/montserrat/Montserrat-Bold.ttf",
+                        "color": "red",
+                        "optimal_size": 240,
+                        "min_size": 150
                     }
                 },
                 "name": {
-                    "text": "Василий Петров",
-                    "coordinates": [[620, 1430], [1820, 1430], [1820, 1715], [620, 1715]],
+                    "text": "Петр Иванов",
+                    "coordinates": [[847, 1040], [2211, 1119]],
                     "font": {
-                        "path": "static/fonts/montserrat/Montserrat-Regular.ttf",
-                        "color": "white",
-                        "optimal_size": 130,
+                        "path": "static/fonts/montserrat/Montserrat-Bold.ttf",
+                        "color": "black",
+                        "optimal_size": 100,
                         "min_size": 90
                     }
                 },
                 "course": {
-                    "text": "Blockchain-разработчик",
-                    "coordinates": [[620, 1730], [1820, 1730], [1820, 2080], [620, 2080]],
+                    "text": "Frontend-разработчик",
+                    "coordinates": [[173, 1653], [1751, 1859]],
+                    "font": {
+                        "path": "static/fonts/montserrat/Montserrat-Bold.ttf",
+                        "color": "black",
+                        "optimal_size": 100,
+                        "min_size": 90
+                    }
+                },
+                "year": {
+                    "text": "2021",
+                    "coordinates": [[1253, 2353], [1805, 2523]],
+                    "font": {
+                        "path": "static/fonts/montserrat/Montserrat-Bold.ttf",
+                        "color": "red",
+                        "optimal_size": 240,
+                        "min_size": 200
+                    }
+                }
+            }
+        },
+        {
+            "template_id": 4,
+            "fields": {
+                "title": {
+                    "text": "Сертификат",
+                    "coordinates": [[137, 327], [1789, 497]],
+                    "font": {
+                        "path": "static/fonts/montserrat/Montserrat-Bold.ttf",
+                        "color": "red",
+                        "optimal_size": 240,
+                        "min_size": 150
+                    }
+                },
+                "name": {
+                    "text": "Петр Иванов",
+                    "coordinates": [[847, 1040], [2211, 1119]],
+                    "font": {
+                        "path": "static/fonts/montserrat/Montserrat-Bold.ttf",
+                        "color": "white",
+                        "optimal_size": 100,
+                        "min_size": 90
+                    }
+                },
+                "course": {
+                    "text": "Frontend-разработчик",
+                    "coordinates": [[173, 1653], [1751, 1859]],
+                    "font": {
+                        "path": "static/fonts/montserrat/Montserrat-Bold.ttf",
+                        "color": "white",
+                        "optimal_size": 100,
+                        "min_size": 90
+                    }
+                },
+                "year": {
+                    "text": "2021",
+                    "coordinates": [[1253, 2353], [1805, 2523]],
+                    "font": {
+                        "path": "static/fonts/montserrat/Montserrat-Bold.ttf",
+                        "color": "red",
+                        "optimal_size": 240,
+                        "min_size": 200
+                    }
+                }
+            }
+        },
+        {
+            "template_id": 5,
+            "fields": {
+                "title": {
+                    "text": "Сертификат",
+                    "coordinates": [[212, 599], [1645, 742]],
+                    "font": {
+                        "path": "static/fonts/montserrat/Montserrat-Medium.ttf",
+                        "color": "white",
+                        "optimal_size": 200,
+                        "min_size": 150
+                    }
+                },
+                "name": {
+                    "text": "Петр Иванов",
+                    "coordinates": [[203, 1227], [1269, 1282]],
+                    "font": {
+                        "path": "static/fonts/montserrat/Montserrat-Medium.ttf",
+                        "color": "white",
+                        "optimal_size": 70,
+                        "min_size": 50
+                    }
+                },
+                "course": {
+                    "text": "Frontend-разработчик",
+                    "coordinates": [[203, 955], [2083, 1099]],
+                    "font": {
+                        "path": "static/fonts/montserrat/Montserrat-Regular.ttf",
+                        "color": "white",
+                        "optimal_size": 70,
+                        "min_size": 50
+                    }
+                },
+                "year": {
+                    "text": "2021",
+                    "coordinates": [[2044, 97], [2276, 171]],
                     "font": {
                         "path": "static/fonts/montserrat/Montserrat-Regular.ttf",
                         "color": "white",
                         "optimal_size": 100,
+                        "min_size": 90
+                    }
+                }
+            }
+        },
+        {
+            "template_id": 6,
+            "fields": {
+                "title": {
+                    "text": "Сертификат",
+                    "coordinates": [[212, 599], [1645, 742]],
+                    "font": {
+                        "path": "static/fonts/montserrat/Montserrat-Medium.ttf",
+                        "color": "blue",
+                        "optimal_size": 200,
+                        "min_size": 150
+                    }
+                },
+                "name": {
+                    "text": "Петр Иванов",
+                    "coordinates": [[203, 1227], [1269, 1282]],
+                    "font": {
+                        "path": "static/fonts/montserrat/Montserrat-Medium.ttf",
+                        "color": "black",
+                        "optimal_size": 70,
+                        "min_size": 50
+                    }
+                },
+                "course": {
+                    "text": "Frontend-разработчик",
+                    "coordinates": [[203, 955], [2083, 1099]],
+                    "font": {
+                        "path": "static/fonts/montserrat/Montserrat-Regular.ttf",
+                        "color": "black",
+                        "optimal_size": 70,
+                        "min_size": 50
+                    }
+                },
+                "year": {
+                    "text": "2021",
+                    "coordinates": [[2044, 97], [2276, 171]],
+                    "font": {
+                        "path": "static/fonts/montserrat/Montserrat-Regular.ttf",
+                        "color": "black",
+                        "optimal_size": 100,
+                        "min_size": 90
+                    }
+                }
+            }
+        },
+        {
+            "template_id": 7,
+            "fields": {
+                "title": {
+                    "text": "Сертификат",
+                    "coordinates": [[299, 669], [2201, 830]],
+                    "font": {
+                        "path": "static/fonts/montserrat/Montserrat-Regular.ttf",
+                        "color": "white",
+                        "optimal_size": 220,
+                        "min_size": 200
+                    }
+                },
+                "name": {
+                    "text": "Петр Иванов",
+                    "coordinates": [[366, 1617], [2113, 1675]],
+                    "font": {
+                        "path": "static/fonts/montserrat/Montserrat-Regular.ttf",
+                        "color": "white",
+                        "optimal_size": 80,
+                        "min_size": 60
+                    }
+                },
+                "course": {
+                    "text": "Frontend-разработчик",
+                    "coordinates": [[177, 1090], [2291, 1263]],
+                    "font": {
+                        "path": "static/fonts/montserrat/Montserrat-Light.ttf",
+                        "color": "white",
+                        "optimal_size": 80,
                         "min_size": 70
                     }
                 },
                 "year": {
-                    "text": "2023",
-                    "coordinates": [[620, 2100], [1820, 2100], [1820, 2830], [620, 2830]],
+                    "text": "2021",
+                    "coordinates": [[1639, 234], [2015, 311]],
                     "font": {
-                        "path": "static/fonts/montserrat/Montserrat-Bold.ttf",
+                        "path": "static/fonts/montserrat/Montserrat-Regular.ttf",
                         "color": "white",
-                        "optimal_size": 300,
-                        "min_size": 250
+                        "optimal_size": 100,
+                        "min_size": 90
+                    }
+                }
+            }
+        },
+        {
+            "template_id": 7,
+            "fields": {
+                "title": {
+                    "text": "Сертификат",
+                    "coordinates": [[299, 669], [2201, 830]],
+                    "font": {
+                        "path": "static/fonts/montserrat/Montserrat-Regular.ttf",
+                        "color": "orange",
+                        "optimal_size": 220,
+                        "min_size": 200
+                    }
+                },
+                "name": {
+                    "text": "Петр Иванов",
+                    "coordinates": [[366, 1617], [2113, 1675]],
+                    "font": {
+                        "path": "static/fonts/montserrat/Montserrat-Regular.ttf",
+                        "color": "black",
+                        "optimal_size": 80,
+                        "min_size": 60
+                    }
+                },
+                "course": {
+                    "text": "Frontend-разработчик",
+                    "coordinates": [[177, 1090], [2291, 1263]],
+                    "font": {
+                        "path": "static/fonts/montserrat/Montserrat-Light.ttf",
+                        "color": "black",
+                        "optimal_size": 80,
+                        "min_size": 70
+                    }
+                },
+                "year": {
+                    "text": "2021",
+                    "coordinates": [[1639, 234], [2015, 311]],
+                    "font": {
+                        "path": "static/fonts/montserrat/Montserrat-Regular.ttf",
+                        "color": "black",
+                        "optimal_size": 100,
+                        "min_size": 90
                     }
                 }
             }

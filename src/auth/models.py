@@ -5,7 +5,7 @@ from sqlalchemy import Column, Integer, String, DateTime, Boolean
 from sqlalchemy.orm import relationship
 
 from src.auth.database import Base
-from src.certificates.models import Project, PrivateTemplate
+from src.certificates.models import Project, PrivateTemplate, PublicTemplate
 
 
 class User(SQLAlchemyBaseUserTable[int], Base):
@@ -26,8 +26,11 @@ class User(SQLAlchemyBaseUserTable[int], Base):
     # Связь с таблицей проектов
     projects = relationship(Project, back_populates="owner", cascade='all, delete-orphan')
 
+    # Связь с таблицей публичных шаблонов
+    public_templates = relationship(PublicTemplate, back_populates="owner", cascade='all, delete-orphan')
+
     # Связь с таблицей приватных шаблонов
-    templates = relationship(PrivateTemplate, back_populates="owner", cascade='all, delete-orphan')
+    private_templates = relationship(PrivateTemplate, back_populates="owner", cascade='all, delete-orphan')
 
     def __repr__(self) -> str:
         return f'User {self.id}: {self.username}'
