@@ -30,18 +30,20 @@ class Certificate(Base):
     __tablename__ = 'certificates'
 
     id = Column(Integer, primary_key=True)
-    name = Column(String, nullable=False)
+    filename = Column(String, nullable=False)
     image = Column(LargeBinary, nullable=False)
     created_on = Column(DateTime, default=datetime.utcnow)
     updated_on = Column(DateTime, default=datetime.utcnow,
                         onupdate=datetime.utcnow)
+    original_id = Column(Integer, ForeignKey('original_images.id'),
+                         nullable=False)
     project_id = Column(Integer, ForeignKey('projects.id'))
 
     # Связь с таблицей проектов
     project = relationship("Project", back_populates="certificates")
 
     def __repr__(self) -> str:
-        return f'Certificate {self.id}: {self.name}'
+        return f'Certificate {self.id}: {self.filename}'
 
 
 class TemplateImage:
@@ -68,3 +70,25 @@ class PrivateTemplate(Base, TemplateImage):
 
     def __repr__(self) -> str:
         return f'Private Template {self.id}: {self.name}'
+
+
+class OriginalImage(Base):
+    __tablename__ = 'original_images'
+
+    id = Column(Integer, primary_key=True, autoincrement=True, index=True)
+    filename = Column(String, nullable=False)
+    image = Column(LargeBinary, nullable=False)
+    user_id = Column(Integer, ForeignKey('users.id'), nullable=False)
+    created_on = Column(DateTime, nullable=False, default=datetime.now)
+
+    # Связь с таблицей пользователей
+    owner = relationship('User', back_populates='original_images')
+
+    # Связь с таблицей отрендеренных изображений
+    rendered_images = relationship(
+        'Certificate', back_populates='original_image'
+    )
+
+    def __repr__(self) -> str:
+        return f'OriginalImage#{self.id}: "{self.filename}" ' + \
+            f'by User#{self.owner.id}'
