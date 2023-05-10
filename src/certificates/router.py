@@ -87,3 +87,22 @@ def get_rendered_image(image_id: int, db: Session = Depends(db.get_db)):
     # Возвращаем изображение как поток байтов
     # с заголовком "image/{image_format}"
     return StreamingResponse(image_stream, media_type=f"image/{image_format}")
+
+
+@certificates_router.get('/templates/all/')
+def get_templates_all(db: Session = Depends(db.get_db)):
+    """Получение всех доступных шаблонов из БД."""
+    response = list()
+    templates = db.query(models.PublicTemplate).all()
+
+    for template in templates:
+        image = utils.binary_to_base64(template.image, 'png')
+        response.append(
+            {
+                'id': template.id,
+                'filename': template.filename,
+                'image': image
+            }
+        )
+
+    return response
