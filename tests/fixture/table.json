@@ -187,9 +187,9 @@
                     "text": "Сертификат",
                     "coordinates": [[212, 599], [1645, 742]],
                     "font": {
-                        "path": "static/fonts/montserrat/Montserrat-Medium.ttf",
+                        "path": "static/fonts/aubrey_pro/Aubrey_Pro-Regular.ttf",
                         "color": "white",
-                        "optimal_size": 200,
+                        "optimal_size": 220,
                         "min_size": 150
                     }
                 },
@@ -197,7 +197,7 @@
                     "text": "Петр Иванов",
                     "coordinates": [[203, 1227], [1269, 1282]],
                     "font": {
-                        "path": "static/fonts/montserrat/Montserrat-Medium.ttf",
+                        "path": "static/fonts/inter/Inter-Light.ttf",
                         "color": "white",
                         "optimal_size": 70,
                         "min_size": 50
@@ -207,7 +207,7 @@
                     "text": "Frontend-разработчик",
                     "coordinates": [[203, 955], [2083, 1099]],
                     "font": {
-                        "path": "static/fonts/montserrat/Montserrat-Regular.ttf",
+                        "path": "static/fonts/inter/Inter-Light.ttf",
                         "color": "white",
                         "optimal_size": 70,
                         "min_size": 50
@@ -217,9 +217,9 @@
                     "text": "2021",
                     "coordinates": [[2044, 97], [2276, 171]],
                     "font": {
-                        "path": "static/fonts/montserrat/Montserrat-Regular.ttf",
+                        "path": "static/fonts/aubrey_pro/Aubrey_Pro-Regular.ttf",
                         "color": "white",
-                        "optimal_size": 100,
+                        "optimal_size": 130,
                         "min_size": 90
                     }
                 }
@@ -232,9 +232,9 @@
                     "text": "Сертификат",
                     "coordinates": [[212, 599], [1645, 742]],
                     "font": {
-                        "path": "static/fonts/montserrat/Montserrat-Medium.ttf",
-                        "color": "blue",
-                        "optimal_size": 200,
+                        "path": "static/fonts/aubrey_pro/Aubrey_Pro-Regular.ttf",
+                        "color": "black",
+                        "optimal_size": 220,
                         "min_size": 150
                     }
                 },
@@ -242,7 +242,7 @@
                     "text": "Петр Иванов",
                     "coordinates": [[203, 1227], [1269, 1282]],
                     "font": {
-                        "path": "static/fonts/montserrat/Montserrat-Medium.ttf",
+                        "path": "static/fonts/inter/Inter-Light.ttf",
                         "color": "black",
                         "optimal_size": 70,
                         "min_size": 50
@@ -252,7 +252,7 @@
                     "text": "Frontend-разработчик",
                     "coordinates": [[203, 955], [2083, 1099]],
                     "font": {
-                        "path": "static/fonts/montserrat/Montserrat-Regular.ttf",
+                        "path": "static/fonts/inter/Inter-Light.ttf",
                         "color": "black",
                         "optimal_size": 70,
                         "min_size": 50
@@ -262,9 +262,9 @@
                     "text": "2021",
                     "coordinates": [[2044, 97], [2276, 171]],
                     "font": {
-                        "path": "static/fonts/montserrat/Montserrat-Regular.ttf",
+                        "path": "static/fonts/aubrey_pro/Aubrey_Pro-Regular.ttf",
                         "color": "black",
-                        "optimal_size": 100,
+                        "optimal_size": 130,
                         "min_size": 90
                     }
                 }
@@ -316,7 +316,7 @@
             }
         },
         {
-            "template_id": 7,
+            "template_id": 8,
             "fields": {
                 "title": {
                     "text": "Сертификат",
