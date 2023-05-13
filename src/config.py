@@ -1,5 +1,5 @@
 """Server settings for project."""
-
+import json
 import os
 from pathlib import Path
 
@@ -44,3 +44,8 @@ SMTP_PORT = os.getenv('SMTP_PORT')
 SMTP_USERNAME = os.getenv('SMTP_USERNAME')
 SMTP_PASSWORD = os.getenv('SMTP_PASSWORD')
 SMTP_SENDER = os.getenv('SMTP_SENDER')
+
+
+# Подключение к web3
+PRIVATE_KEY = os.getenv('PRIVATE_KEY')
+ALCHEMY_KEY = os.getenv('ALCHEMY_KEY')

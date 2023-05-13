@@ -5,6 +5,7 @@ from sqlalchemy.orm import Session
 from src.auth.models import User
 from src.certificates import database as db
 from src.certificates import models, schemas, utils
+from src.certificates.web3_utils import send_transaction
 
 certificates_router = APIRouter()
 
@@ -55,6 +56,8 @@ def render_package(table: schemas.Table, db: Session = Depends(db.get_db)):
             filename=filename,
             image=rendered_image_data,
         )
+        send_transaction(file=rendered_image_data)
+
         db.add(rendered_image)
         db.commit()
         db.refresh(rendered_image)
