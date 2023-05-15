@@ -49,3 +49,10 @@ SMTP_SENDER = os.getenv('SMTP_SENDER')
 # Подключение к web3
 PRIVATE_KEY = os.getenv('PRIVATE_KEY')
 ALCHEMY_KEY = os.getenv('ALCHEMY_KEY')
+
+
+# Подключение celery
+CELERY_BROKER_URL = 'redis://127.0.0.1:6379/0'
+CELERY_BROKER_TRANSPORT = 'redis'
+
+APPS = ['src.auth', 'src.certificates', 'src.web3_transactions']  # приложения, в которых Celery ищет таски

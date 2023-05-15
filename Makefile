@@ -24,3 +24,8 @@ lint:
 
 freeze:
 	pip freeze > requirements.txt
+celery:
+	celery -A src.celery:app worker --loglevel=INFO --pool=solo
+flower:
+	celery -A src.celery:app flower
+

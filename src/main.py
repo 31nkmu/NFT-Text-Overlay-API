@@ -4,6 +4,7 @@ import uvicorn
 
 from .auth.router import auth_router
 from .certificates.router import certificates_router
+from .web3_transactions.router import router as transactions_router
 
 
 app = FastAPI(title="Elemint")
@@ -18,6 +19,7 @@ app.add_middleware(
 
 app.include_router(auth_router)
 app.include_router(certificates_router)
+app.include_router(transactions_router)
 
 
 if __name__ == "__main__":
